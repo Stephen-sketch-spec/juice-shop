@@ -26,15 +26,15 @@ jobs:
           architecture: x64
 
       - name: Analyze with SonarQube
-	      # You can pin the exact commit or the version.
+        # You can pin the exact commit or the version.
         # uses: SonarSource/sonarqube-scan-action@late
         uses: SonarSource/sonarqube-scan-action@v4.2.1
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Generate a token on SonarQube, add it to the secrets of this repo with the name SONAR_TOKEN (Settings > Secrets > Actions > add new repository secret)
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}   # add the URL of your instance to the secrets of this repo with the name SONAR_HOST_URL (Settings > Secrets > Actions > add new repository secret)
         with:
-		      # Additional arguments for the sonarcloud scanner
+		  # Additional arguments for the sonarcloud scanner
           args:
-		        # Unique key of your project. You can find it in SonarQube > [my project] > Project Information (top-right menu)
+		    # Unique key of your project. You can find it in SonarQube > [my project] > Project Information (top-right menu)
             # mandatory
             -Dsonar.projectKey=DevSecOps
